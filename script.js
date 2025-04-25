@@ -9,7 +9,7 @@ let isRunning = false;
 function updateTimer() {
     const currentTime = Date.now();
     const elapsedTime = (currentTime - startTime) / 1000;
-    timerDisplay.textContent = elapsedTime.toFixed(2);
+    timerDisplay.textContent = elapsedTime.toFixed(5);
 }
 
 function toggleGame() {
@@ -28,7 +28,7 @@ function toggleGame() {
         const endTime = (Date.now() - startTime) / 1000;
         const difference = Math.abs(7 - endTime);
         
-        if (difference < 0.1) {
+        if (difference < 0.00001) {
             resultDisplay.textContent = '축하합니다! 🎉';
         } else {
             resultDisplay.textContent = '다시 도전!';
